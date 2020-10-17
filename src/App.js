@@ -7,5 +7,22 @@ import SingleCocktail from "./pages/SingleCocktail";
 import Error from "./pages/Error";
 
 export default function App() {
-  return <h1>app component</h1>;
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/cocktail/:id">
+          <SingleCocktail />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
